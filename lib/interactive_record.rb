@@ -54,10 +54,10 @@ def self.find_by_name(name)
 end
 
 def self.find_by(attr)
-  value = attribute_hash.values.first
+  value = attr.values.first
     formatted_value = value.class == Fixnum ? value : "'#{value}'"
 
-  sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys[0]} = #{attr.values[0]}"
+  sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys[0]} = #{formatted_value}"
   binding.pry
   DB[:conn].execute(sql)
 end
