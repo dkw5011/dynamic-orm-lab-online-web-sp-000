@@ -53,8 +53,8 @@ def self.find_by_name(name)
 end
 
 def self.find_by(attr:)
-  sql = "SELECT * FROM #{self.table_name} WHERE #{attr} = ?"
-  DB[:conn].execute(sql, attr:)
+  sql = "SELECT * FROM #{self.table_name} WHERE #{attr:} = ?"
+  DB[:conn].execute(sql, attr: attr)
 end
 
 end
