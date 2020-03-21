@@ -54,9 +54,9 @@ def self.find_by_name(name)
 end
 
 def self.find_by(attr)
-  binding.pry
+  #binding.pry
   sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys[0]} = #{attr.values[0]}"
-  DB[:conn].execute(sql, attr)
+  DB[:conn].execute(sql)
 end
 
 end
