@@ -58,7 +58,7 @@ def self.find_by(attr)
     formatted_value = value.class == Fixnum ? value : "'#{value}'"
 
   sql = "SELECT * FROM #{self.table_name} WHERE #{attr.keys[0]} = #{formatted_value}"
-  binding.pry
+  
   DB[:conn].execute(sql)
 end
 
